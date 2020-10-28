@@ -1,0 +1,72 @@
+<h1>Add Teams</h1>
+
+<a [routerLink]="['/teams/myteam']" class="btn">MY TEAMS</a>&nbsp;
+<a [routerLink]="['/teams/teamsearch']" class="btn">SEARCH</a>&nbsp;
+<a [routerLink]="['/teams/addteams']" class="btn">ADD</a>
+<p>&nbsp;</p>
+<h3>All Tournaments</h3>
+
+<div class="main1">
+    
+    <p-card header="Details:-" subheader="Organizer:-{{t.orgname}}" [style]="{width: '300px'}" styleClass="ui-card-shadow" *ngFor="let t of tournament" >
+        <p-header>
+            <h1>&nbsp;Tournament:-{{t.tname}}</h1>
+           
+        </p-header>
+        <div>
+            <table>
+            <tr><td>Contact:-</td><td>{{t.orgnumber}}</td></tr>
+            <tr><td>Type:-</td><td>{{t.cat_name}}</td></tr>
+            <tr><td>StartDate:-</td><td>{{t.start_date | date : 'dd-MM-yyyy'}}</td></tr>
+            <tr><td>EndDate:-</td><td>{{t.end_date | date : 'dd-MM-yyyy'}}</td></tr>
+            <tr><td>Category:-</td><td>{{t.over | uppercase}}</td></tr>
+            <tr><td>Place:-</td><td>{{t.city | uppercase}}</td></tr>
+            </table>      
+        </div>
+        <p-footer>
+            <a [routerLink]="['/myteam',t.id]" pButton type="button" label="Enter" icon="pi pi-check" style="margin-right: .25em"></a>   
+            <!-- <button pButton type="button" label="Cancel" icon="pi pi-times" class="ui-button-secondary"></button> -->
+        </p-footer>
+    </p-card>
+    </div>
+<!-- <table class="tbl">
+ 
+    <tr *ngFor="let t of tournament" class="trr">
+        <a [routerLink]="['/myteam',t.id]">
+        <td class="tn"><span class="tname"><h1>{{t.tname}}</h1></span>            
+             <tr>
+                 <td>OrganizerName:-</td>
+                <td><span>{{t.orgname}}</span></td>
+                <td>Place:-</td>
+                 <td><span>{{t.city}}</span></td>
+             </tr>
+            
+            <tr>
+                <td>Contact:-</td>
+                <td><span>{{t.orgnumber}}</span></td>
+                <td>Type:-</td>
+                <td><span>{{t.cat_name}}</span></td>
+            </tr>
+            <tr>
+                
+            </tr>
+            <tr>
+                <td>StartDate:-</td>
+                <td><span>{{t.start_date | date : 'dd-MM-yyyy'}}</span></td>
+                <td>EndDate:-</td>
+                <td><span>{{t.end_date | date : 'dd-MM-yyyy'}}</span></td>
+            </tr>
+            <tr>
+               
+            </tr>
+            <tr>
+                <td>Over</td>
+                <td><span>{{t.over}}</span></td>
+            </tr>
+            
+            </td>   
+        </a> 
+    </tr>
+
+</table> -->
+<router-outlet></router-outlet>

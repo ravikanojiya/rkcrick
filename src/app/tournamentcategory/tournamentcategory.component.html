@@ -1,0 +1,14 @@
+<p>tournamentcategory works!</p>
+<form [formGroup]="myForm" (ngSubmit)="addcategory()">
+    <table>
+        <tr>
+            <td><input type="text" formControlName="cat_name" placeholder="Enter Category"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Add Tournament Category"></td>
+        </tr>
+    </table>
+</form>
+
+<a [routerLink]="['/addtournamentcat/listcat']">Get Category</a>
+<router-outlet></router-outlet>

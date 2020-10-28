@@ -1,0 +1,29 @@
+<a [routerLink]="['/playerlist',player[0].tid]" class="btn">MY PLAYERS</a>&nbsp;
+
+<h1>Edit Player</h1>
+
+  
+<form class="frm" *ngIf="myForm" [formGroup]="myForm" (ngSubmit)="submit()">
+    <table align="center" class="tbl">
+
+        <tr>
+            <td><input type="text" formControlName="player_name" placeholder="Player Name*" class="txt"></td>
+        </tr>
+        <tr>
+            <td>
+                <select class="txt" formControlName="player_id" >
+                  
+                    <option  *ngFor="let l of playerlist" value="{{l.player_id}}">{{l.prole}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="text" formControlName="mobile" placeholder="Valid Phone Number*" class="txt"></td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="UPDATE PLAYER" class="nextbtn"></td>
+        </tr>
+
+    </table>
+</form>

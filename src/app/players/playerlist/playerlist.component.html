@@ -1,0 +1,22 @@
+<h1>{{tname}}</h1>
+<a [routerLink]="['/playerlist']" class="btn">MY PLAYERS</a>&nbsp;
+<a [routerLink]="['/players',tid]" class="btn">ADD PLAYERS</a>&nbsp;
+<!-- <a [routerLink]="['/searchplayer']" class="btn">SEARCH</a>&nbsp; -->
+
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+<table class="tble">
+    <tr *ngFor="let p of playerlist">
+        <td><p><b>{{p.player_name}}</b></p><p class="cat">{{p.prole}}</p></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    <td><a [routerLink]="['/editplayer',p.pid]"><p class="cat">Edit Profile</p></a></td>   
+    <td>
+        <button type="text" (click)="confirm(p.pid)" pButton icon="pi pi-check" label="Confirm"></button></td>
+        <!-- <td><a [routerLink]="['/deleteplayer',p.pid]"><p class="cat">Remove</p></a> </td> -->
+    </tr>
+   
+</table>

@@ -1,0 +1,21 @@
+<p>test works!</p>
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+    <table>
+        <tr>
+            <td><input type="text" formControlName="name" placeholder="enter name"></td>
+            <td><input type="text" formControlName="mobile" placeholder="enter mobile"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Add"></td>
+        </tr>
+    </table>
+</form>
+
+<table>
+    <tr *ngFor="let u of list">
+        <td>{{u.name}}</td>
+        <td>{{u.mobile}}</td>
+        <td><a [routerLink]="['/test/edituser',u.id]">Edit</a></td>
+        <td><button (click)="delete(u.id)">Delete</button></td>
+    </tr>
+</table>

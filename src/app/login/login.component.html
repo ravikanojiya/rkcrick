@@ -1,0 +1,27 @@
+<!-- <p-toast [style]="{marginTop: '80px'}"></p-toast> -->
+
+<form [formGroup]="lg" (ngSubmit)="login()">
+    <table>
+        <tr>
+            <td><h1>Login</h1></td>
+        </tr>
+        <tr>
+            <td><input type="text" formControlName="orgname" placeholder="Username">
+            </td>
+            <td>
+                <p-message *ngIf="lg.get('orgname').invalid  && lg.get('orgname').touched"  severity="error" text="UserName is required"></p-message>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="password" formControlName="orgnumber" placeholder="Password">
+            </td>
+            <td>
+                <p-message *ngIf="lg.get('orgnumber').invalid  && lg.get('orgnumber').touched"  severity="error" text="Password is required"></p-message>
+
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Login"></td>
+        </tr>
+    </table>
+</form>

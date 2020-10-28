@@ -1,0 +1,33 @@
+<p>ScoreBoard</p>
+<p-card *ngFor="let m of mlist" header="{{m.teamname1 | uppercase}}&nbsp;Vs&nbsp;{{m.teamname2 | uppercase}}" subheader=" {{m.toss}} won the toss and elected to {{m.tossselect}}" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+    <p-header>
+        <span class="btn">Live</span>
+        
+    </p-header>
+    <div >
+        <div>{{m.mp}} | {{m.md |date: 'dd-MM-yyyy'}} | {{m.over}}&nbsp;Overs</div> 
+        <span class="scrbd">124/1</span>(1.1/{{m.over}})</div>
+    <p-footer>
+        <a href="">Scoreboard</a>
+    </p-footer>
+</p-card>
+<!-- 
+<p-card *ngIf="mx"  header="{{mx.teamname1 | uppercase}}&nbsp;Vs&nbsp;{{mx.teamname2 | uppercase}}" subheader=" {{mx.toss}} won the toss and elected to {{mx.tossselect}}" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+    <p-header>
+        <span class="btn" >Live</span>
+        
+    </p-header>
+    <div >
+        <div>hi <p [innerHTML]="mx.mp"></p></div> 
+        <span class="scrbd">124/1</span>(1.1/{{mx.over}})</div>
+    <p-footer>
+        <a href="">Scoreboard</a>
+    </p-footer>
+</p-card> -->
+
+
+<div *ngFor="let m of mlist">
+    <a [routerLink]="['/mymatch',m.mid]">{{m.teamname1}}</a>
+    <a [routerLink]="['/mymatch',m.mid]">{{m.teamname2}}</a>
+</div>
+<router-outlet></router-outlet>

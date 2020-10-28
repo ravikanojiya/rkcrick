@@ -1,0 +1,36 @@
+<P>{{teamname}}</P>
+<a [routerLink]="['/playerlist',tid]" class="btn">MY PLAYERS</a>&nbsp;
+<!-- <a [routerLink]="['/searchplayer']" class="btn">SEARCH</a>&nbsp; -->
+<!-- <p-messages [(value)]="msgs"></p-messages> -->
+<p>&nbsp;</p>
+<form class="frm" [formGroup]="myForm" (ngSubmit)="submit()">
+    <table align="center" class="tbl">
+
+        <tr>
+            <td><input type="text" formControlName="player_name" placeholder="Player Name*" class="txt"></td>
+        </tr>
+        <tr>
+            <td><input type="hidden" class="txt" formControlName="tid"></td>
+        </tr>
+        <tr>
+            <td>
+                <select class="txt" formControlName="player_id">
+                    <option disabled value="-1">Player Role*</option>
+                    <option *ngFor="let l of list" value="{{l.player_id}}">{{l.prole}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="text" formControlName="mobile" placeholder="Valid Phone Number*" class="txt"></td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="ADD NEW PLAYER" class="nextbtn"></td>
+        </tr>
+
+    </table>
+    
+</form>
+
+
+<router-outlet></router-outlet>

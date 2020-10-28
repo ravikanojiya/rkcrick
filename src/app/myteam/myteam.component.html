@@ -1,0 +1,93 @@
+<p>&nbsp;</p>
+<a [routerLink]="['/teams']" class="btn">All Tournaments</a>
+<a [routerLink]="['/addteams',tid]" class="btn">Add Teams</a>
+<br>
+<br>
+<table class="tbl">
+<tr>
+    <td align="center"><u>Tounament Name</u> </td><td align="center"><u>Organizer</u> </td> <td align="center"><u>Contact</u> </td>
+</tr>
+    <tr *ngFor="let t of tourlist">
+        <td align="center">
+            <h1>{{t.tname}}</h1>
+        </td>
+        <td align="center">
+            <h4>{{t.orgname}}</h4>
+        </td>
+        <td align="center">
+            <h4>{{t.orgnumber}}</h4>
+        </td>
+</tr>
+</table>
+<hr>
+<form [formGroup]="myForm" *ngIf="myForm" (ngSubmit)="savematch()">
+    <table class="tbl">
+        <tr>
+            <td>
+                <h3>Let's Play !</h3>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="hidden" formControlName="id"></td>
+        </tr>
+        <tr>
+            <td><select formControlName="tid1" class="txt" (change)="getplayerA($event.target.value)">
+                    <option value="0">----Select Team A----</option>
+                    <option value="{{t.tid}}" *ngFor="let t of teamlist">{{t.team_name}}</option>
+                </select>
+            </td>
+            <td><select formControlName="tid2" class="txt" (change)="getplayerB($event.target.value)">
+                    <option value="0" >----Select Team B----</option>
+                    <option value="{{t.tid}}" *ngFor="let t of teamlistB">{{t.team_name}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input formControlName="over" type="number" placeholder="Over" class="txt" max="50" min="0"></td>
+            <td><input  formControlName="match_date"type="date" name="" id="" class="txt"></td>
+        </tr>
+        <tr>           
+            <td><select class="txt" formControlName="tosswinteam_id">
+                <option value="0">----TossTeam----</option>
+                <option value="{{t.tid}}" *ngFor="let t of teamlist">{{t.team_name}}</option>
+            </select></td>
+            <td><input type="text" formControlName="tossselection" placeholder="Batting / Bowling" class="txt"></td>
+        </tr>
+        <tr>
+            <td><input type="text" formControlName="match_place" placeholder="Match Place" class="txt"></td>
+        </tr>
+        <tr>           
+            <td><select class="txt" formControlName="captainteam1">
+                <option value="0">----Team A Captain----</option>
+                <option value="{{t.pid}}" *ngFor="let t of playerlist">{{t.player_name}}</option>
+            </select></td>
+            <td><select class="txt" formControlName="captainteam2">
+                <option value="0">----Team B Captain----</option>
+                <option value="{{t.pid}}" *ngFor="let t of playerlistB">{{t.player_name}}</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="right"><input type="submit" value="Create Match" class="btn"></td>
+        </tr>
+    </table>
+</form>
+<p-carousel [value]="teamlist" [style]="{'max-width':'250px', 'margin-top':'2em'}" [autoplayInterval]="3000"
+    [circular]="true" [numVisible]="1" [numScroll]="1">
+    <ng-template let-team pTemplate="item">
+        <p-card>
+            <!-- <p-header>
+               Teams
+            </p-header> -->
+            <a [routerLink]="['/players',team.tid]">
+                <td class="tl">
+                    <h4>{{team.team_name}}</h4>
+                </td>
+            </a>
+            <!-- <p-footer>
+               Teams
+            </p-footer> -->
+        </p-card>
+
+    </ng-template>
+</p-carousel>
+<router-outlet></router-outlet>

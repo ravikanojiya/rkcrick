@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body{margin: 0;font-family: arial;}
+*{box-sizing: border-box;}
+.menu{display: flex;flex-wrap: wrap;background-color: #262626;justify-content: center;}
+.menu a{padding: 12px 20px;color: #fff;text-decoration: none;}
+.menu a:hover{background-color: #F93131;}
+hr{background:linear-gradient(45deg,red,yellow,red);height: 10px;margin: 0;}
+.main{display: flex;flex-wrap: wrap;justify-content: center;}
+.main1{display: flex;flex-wrap: wrap;justify-content: space-evenly;padding: 20px;}
+.section{padding: 20px;}
+/* .section1{padding: 20px;border: 1px solid #eee;flex: 50%;} */
+.btn{width: 150px;padding: 10px 20px;background-color: #F93131;
+    border: none;color: #fff;border-radius: 20px;text-decoration: none;}
+.btn:hover{background-color: #fff;color: #F93131;border: 2px solid #eee;}
+.imgtxt{padding: 20px;border: 1.5px solid #eee;border-radius: 20px;}
+.frm{flex: 50%; padding: 40px;border: 1px solid #f1f1f1;
+}
+.tbl{width: 100%;}
+.txt{padding: 7px;border-top: none;border-left: none;border-right: none;
+    width: 100%; border-bottom: 1.5px solid #eee;margin-bottom: 15px;outline: none;
+font-size: 16px;}
+.txt:hover{border-bottom: 1.5px solid #F93131;}
+.nextbtn{width: 150px;padding: 10px;border: none; background-color: #F93131;color: #fff;text-decoration: none;}
+.addteam{width: 180px;padding: 20px;
+    text-align: center;font-size: 34px;text-decoration: none;
+background-color: #f1f1f1;color: #000;}
+.addteam:hover{background-color: #F93131;color: #fff;}
+.tble{width: 100%;border: 1px solid #eee;padding: 10px; border-radius: 4px;}
+.tble td{border-bottom: 1px solid #eee;padding-top: 10px;}
+.tble td p{margin: 0;}
+.cat{color: #777;}
+.tbl{padding: 20px;border: 1px solid #eee;width: 100%;}
+.tn{padding: 20px;border: 1px solid #eee;}
+.tname{width: 100%;padding: 100px;}
+.trr{background-color: #3333;}
+h4{margin: 0;}
+.tl{padding: 30px;width: 150px;background-color: #F93131;color: #fff;
+    text-decoration: none;border-radius: 10px;}
+ .ui-card-shadow:hover{background-color: #17a2b8;color: #fff;}
+ .col{color: red;font-size: 20px;}
+ .scrbd{font-size: 30px;}

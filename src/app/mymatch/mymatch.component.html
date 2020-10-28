@@ -1,0 +1,15 @@
+<p-card *ngFor="let m of mlist" header="{{m.teamname1 | uppercase}}&nbsp;Vs&nbsp;{{m.teamname2 | uppercase}}" subheader=" {{m.toss}} won the toss and elected to {{m.tossselect}}" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+    <p-header>
+        <span class="btn">Live</span>
+        
+    </p-header>
+    <div >
+        <div>{{m.mp}} | {{m.md |date: 'dd-MM-yyyy'}} | {{m.over}}&nbsp;Overs</div> 
+        <span class="scrbd">124/1</span>(1.1/{{m.over}})</div>
+        <div *ngFor="let p of plist"> 
+            {{p.pln}}
+        </div>
+    <p-footer>
+        <a href="">Scoreboard</a>
+    </p-footer>
+</p-card>

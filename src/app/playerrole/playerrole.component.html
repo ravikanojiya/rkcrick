@@ -1,0 +1,15 @@
+<p>playerrole works!</p>
+<form [formGroup]='myForm' (ngSubmit)="addplayerRole()">
+    <table>
+        <tr>
+            <td><input type="text" formControlName="prole" placeholder="Enter Player Role"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Add Player Role">
+            </td>
+        </tr>
+    </table>
+</form>
+<a [routerLink]="['/prole/listrole']">Role List</a>
+<router-outlet></router-outlet>

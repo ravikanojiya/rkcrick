@@ -1,0 +1,23 @@
+<p-sidebar [(visible)]="display" position="right" >
+    <!-- <p-panel *ngFor="let m of matchlist" header="Live!" [toggleable]="true"> -->
+   <p-panel *ngFor="let m of matchlist" header="Live!">
+        <table class="tbl" >
+            <tr>
+                <td >{{m.teamname1 | uppercase}}</td>
+                <td>/</td>
+                <td >{{m.teamname2| uppercase}}</td>
+            </tr>
+            <tr>
+                <td class="col">124 / 3</td>
+                <td>({{m.over}})</td>
+               
+            </tr>
+            <tr>
+                <td> <a [routerLink]="['/score',m.match_id]">ScoreBoard</a></td>
+            </tr>
+        </table>
+    </p-panel>
+</p-sidebar>
+<button type="text" (click)="display = true" pButton icon="pi pi-plus" label="Live Score"></button>
+<app-menu></app-menu>
+<hr>

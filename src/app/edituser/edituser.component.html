@@ -1,0 +1,12 @@
+<p>edituser works!</p>
+<form [formGroup]="myForm" *ngIf="myForm" (ngSubmit)="update()">
+    <table>
+        <tr>
+            <td><input type="text" formControlName="name"></td>
+            <td><input type="text" formControlName="mobile"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Update"></td>
+        </tr>
+    </table>
+</form>

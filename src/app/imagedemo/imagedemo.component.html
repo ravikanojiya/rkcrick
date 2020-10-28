@@ -1,0 +1,16 @@
+<form [formGroup]="myForm" (ngSubmit)="addimage()" enctype="multipart/form-data">
+<table>
+    <tr>
+        <td><input type="text" formControlName="un" ></td>
+    </tr>
+    <tr>
+        <td><input type="file" formControlName="img" (change)="onFileChanged($event)"></td>
+        <td> <img [src]="imgURL" height="200" *ngIf="imgURL"></td>
+        <!-- <td>{{ receivedImageData['img'] | json}}</td> -->
+        <td><img [src]="convertedImage" ></td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="AddImage"></td>
+    </tr>
+</table>
+</form>

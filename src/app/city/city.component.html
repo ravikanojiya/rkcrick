@@ -1,0 +1,14 @@
+<p>city works!</p>
+<form [formGroup]="myForm" (ngSubmit)="submit()">
+    <table>
+        <tr>
+            <td><input type="text" formControlName="city" placeholder="Enter City"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Add City"></td>
+        </tr>
+    </table>
+</form>
+
+<a [routerLink]="['/city/listcity']">List City</a>
+<router-outlet></router-outlet>

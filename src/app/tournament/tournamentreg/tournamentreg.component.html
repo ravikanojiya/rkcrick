@@ -1,0 +1,67 @@
+<form class="frm" [formGroup]="myForm" (ngSubmit)="submit()">
+    <table align="center" class="tbl">
+        <!-- <tr>
+            <td>Select TeamBanner*</td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="file" class="imgtxt"></td>
+        </tr> -->
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td><input type="text" formControlName="tname" placeholder="Tournament Name*" class="txt"></td>
+            <td>
+                <select class="txt" formControlName="city_id">
+                    <option disabled>---CITY---</option>
+                    <option *ngFor="let ct of citylist" value="{{ct.city_id}}">{{ct.city}}</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><input type="text" formControlName="orgname" placeholder="Organiser Name*" class="txt"></td>
+            <td><input type="text" formControlName="orgnumber" placeholder="Organiser Number*" class="txt"></td>
+        </tr>
+        <tr>
+            <td>StartDate</td>
+            <td>EndDate</td>
+        </tr>
+        <tr>
+            <td><input type="date" formControlName="start_date" class="txt"></td>
+            <td><input type="date" formControlName="end_date" class="txt"></td>
+        </tr>
+        <tr>
+            <td>
+                <select class="txt" formControlName="tour_cat_id">
+                    <option>---Tournament Category---</option>
+                    <option *ngFor="let l of list"  value="{{l.tour_cat_id}}" >{{l.cat_name}}</option>
+                </select>
+
+            </td>
+            <td>
+                <select class="txt" formControlName="balltype">
+                    <option disabled>--Select Ball Type---</option>
+                    <option value="TENNIS">TENNIS</option>
+                    <option value="LEATHER">LEATHER</option>
+                    <option value="OTHER">OTHER</option>
+                </select>
+
+            </td>
+        </tr>
+        <tr>
+            <td><input type="radio" formControlName="over" value="limiter over" >Limited Overs</td>
+            <td><input type="radio" formControlName="over" value="test match" >Test Match</td>
+        </tr>
+       <tr>
+           <td colspan="2">
+               <textarea formControlName="details" cols="80" rows="4" 
+               placeholder="Add more details,Ex:- Prizes,Awards,Entery Fees, Rules, etc."></textarea>
+           </td>
+       </tr>
+       <tr><td>&nbsp;</td></tr>
+        <tr>
+            <td><input type="submit" class="nextbtn" value="Next"> </td>
+        </tr>
+    </table>
+</form>

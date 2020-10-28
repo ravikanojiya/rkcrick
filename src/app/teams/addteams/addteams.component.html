@@ -1,0 +1,21 @@
+<h1>Add Your Teams</h1>
+<form class="frm" [formGroup]="myForm"  (ngSubmit)="submit()">
+    <table  class="tbl">     
+        <tr>
+            <td><input type="text" formControlName="team_name" placeholder="Team Name*"  class="txt"></td>
+        </tr>
+        <tr>
+            <td><select class="txt" formControlName="city_id">
+                <option>---Select City---</option>
+                <option *ngFor="let c of cityname" value="{{c.city_id}}">{{c.city}}</option>
+            </select></td>
+        </tr>
+         
+        <tr>
+            <td ><input type="hidden" formControlName="id" class="imgtxt"></td>
+        </tr> 
+        <tr>
+            <td><input type="submit" value="Add Team" class="nextbtn"> </td>
+        </tr>
+</table>
+</form>
